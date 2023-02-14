@@ -32,23 +32,22 @@ spec:
 
       containers:
 
-       - name: backend-user
+        - name: backend-user
 
-        image: theopen4/udagram-api-user:v1
+          image: theopen4/udagram-api-user:v1
 
-        ports:
+          ports:
 
-          - containerPort: 8080
-
-        envFrom:
+           - containerPort: 8080
+          envFrom:
           - configMapRef:
              name: env-configmap 
           - secretRef:
-               name: env-pg-secrets    
-        volumeMounts:
+               name: env-pg-secrets
+          volumeMounts:
             - mountPath: "/root/.aws/"
               name: aws-creds
       volumes:
-        name: aws-creds
-          - configMap:
+        - name: aws-creds
+          configMap:
             name: aws-creds       

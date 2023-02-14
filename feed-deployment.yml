@@ -48,7 +48,7 @@ spec:
             - mountPath: "/root/.aws/"
               name: aws-creds
       volumes:
-        name: aws-creds
-          - configMap:
+       - name: aws-creds
+         configMap:
             name: aws-creds        
 
